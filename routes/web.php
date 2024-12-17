@@ -1,5 +1,6 @@
 <?php
-
+use App\Http\Controllers\ttaNhaccController;
+use App\Http\Controllers\ttaVattucontroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+   
+Route::get('/ttalist', [ttaNhaccController::class, 'list'])->name('Nhacc.list');
+   
+Route::get('/ttavattulist', [ttaVattucontroller::class, 'list'])->name('vattu.list');
